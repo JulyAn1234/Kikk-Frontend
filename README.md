@@ -1,6 +1,6 @@
 # Kikk-Frontend repository
 
-This project called Kikk is am online shop focused on selling desktop PC parts. This is the frontend repository for the page.
+This project called Kikk is an online shop focused on selling desktop PC parts. This is the frontend repository for the page.
 
 ## Technologies used
 
