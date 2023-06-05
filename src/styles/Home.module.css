@@ -1,0 +1,21 @@
+
+
+.HeadingContainer {
+  background-color: #FDB44E;
+  padding: 20px;
+  width: 65%;
+  border-radius: 8px;
+  margin: 20px auto; /* Add this line */
+}
+
+.Heading {
+  color: white;
+}
+
+.HeaderMargin {
+  margin-bottom: 40px;
+}
+
+.ProductsMargin {
+  margin-top: 20px;
+}
