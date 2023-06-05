@@ -1,8 +1,7 @@
-const SERVER_URL = 'http://localhost:3000';
 
 export const getOrders = async () => {
     try{
-        const response = await fetch(`${SERVER_URL}/orders`)
+        const response = await fetch(`${process.env.SERVER_URL}/orders`)
         const ordersJson = await response.json()
 
         return ordersJson.orders
@@ -14,7 +13,7 @@ export const getOrders = async () => {
 
 export const getOrder = async (id) => {
     try {
-      const response = await fetch(`${SERVER_URL}/orders/${id}`)
+      const response = await fetch(`${process.env.SERVER_URL}/orders/${id}`)
       const ordersJson = await response.json()
       return ordersJson.order
     } catch (error) {
@@ -26,7 +25,7 @@ export const getOrder = async (id) => {
 
   export const createOrder = async order => {
     try {
-      const response = await fetch(`${SERVER_URL}/orders`, {
+      const response = await fetch(`${process.env.SERVER_URL}/orders`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(order),

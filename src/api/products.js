@@ -1,8 +1,6 @@
-const SERVER_URL = 'http://localhost:3000';
-
 export const getProducts = async () => {
     try{
-        const response = await fetch(`${SERVER_URL}/products`)
+        const response = await fetch(`${process.env.SERVER_URL}/products`)
         const productsJson = await response.json()
 
         return productsJson.products
@@ -14,7 +12,7 @@ export const getProducts = async () => {
 
 export const getProductById = async (id) => {
     try {
-      const response = await fetch(`${SERVER_URL}/products/${id}`)
+      const response = await fetch(`${process.env.SERVER_URL}/products/${id}`)
       const productsJson = await response.json()
       return productsJson.product
     } catch (error) {
@@ -25,7 +23,7 @@ export const getProductById = async (id) => {
   
   export const updateProduct = async product => {
     try {
-      const response = await fetch(`${SERVER_URL}/products/${product._id}`, {
+      const response = await fetch(`${process.env.SERVER_URL}/products/${product._id}`, {
         method: 'PUT',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(product),
@@ -40,7 +38,7 @@ export const getProductById = async (id) => {
   
   export const createProduct = async product => {
     try {
-      const response = await fetch(`${SERVER_URL}/products`, {
+      const response = await fetch(`${process.env.SERVER_URL}/products`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(product),
@@ -56,7 +54,7 @@ export const getProductById = async (id) => {
   
   export const deleteProduct = async id => {
     try {
-      const response = await fetch(`${SERVER_URL}/products/${id}`, {
+      const response = await fetch(`${process.env.SERVER_URL}/products/${id}`, {
         method: 'DELETE',
       })
   

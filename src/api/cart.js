@@ -1,8 +1,6 @@
-const SERVER_URL = 'http://localhost:3000';
-
 export const getCart = async () => {
   try{
-      const response = await fetch(`${SERVER_URL}/cart`)
+      const response = await fetch(`${process.env.SERVER_URL}/cart`)
       const cartJson = await response.json()
 
       return cartJson.Cart
@@ -14,7 +12,7 @@ export const getCart = async () => {
 
 export const getCartCount = async () => {
     try{
-        const response = await fetch(`${SERVER_URL}/cartcount`)
+        const response = await fetch(`${process.env.SERVER_URL}/cartcount`)
         const cartCountJson = await response.json()
 
         return cartCountJson.cartCount
@@ -26,7 +24,7 @@ export const getCartCount = async () => {
 
   export const addToCart = async (productId) => {
     try {
-      const response = await fetch(`${SERVER_URL}/addtocart`, {
+      const response = await fetch(`${process.env.SERVER_URL}/addtocart`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ productId }),
@@ -44,7 +42,7 @@ export const getCartCount = async () => {
   
   export const deleteFromCart = async id => {
     try {
-      const response = await fetch(`${SERVER_URL}/deletefromcart/${id}`, {
+      const response = await fetch(`${process.env.SERVER_URL}/deletefromcart/${id}`, {
         method: 'DELETE',
       })
   
@@ -57,7 +55,7 @@ export const getCartCount = async () => {
 
   export const quitOneFromCart = async id => {
     try {
-      const response = await fetch(`${SERVER_URL}/quitonefromcart/${id}`, {
+      const response = await fetch(`${process.env.SERVER_URL}/quitonefromcart/${id}`, {
         method: 'PUT'
       })
       const newProductOnCart = await response.json()
