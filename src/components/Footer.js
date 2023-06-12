@@ -10,7 +10,6 @@ export default function Footer() {
             Jose Julian Hernandez Jara
           </a>
         </p>
-        <p style={textStyle}>© 2023 Kikk. All rights reserved.</p>
       </div>
     </footer>
   );
